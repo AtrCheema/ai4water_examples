@@ -42,9 +42,14 @@ class MyTransformationExperiments(TransformationExperiments):
 
 cases = {
     'model_None': {'y_transformation': 'none'},
+    'model_minmax': {'y_transformation': 'minmax'},
+    'model_zscore': {'y_transformation': 'zscore'},
     'model_robust': {'y_transformation': 'robust'},
     'model_quantile': {'y_transformation': 'quantile'},
-    'model_log': {'y_transformation': {'method':'log', 'treat_negatives': True, 'replace_zeros': True}}
+    'model_log': {'y_transformation': {'method':'log', 'treat_negatives': True, 'replace_zeros': True}},
+    "model_pareto": {"y_transformation": "pareto"},
+    "model_vast": {"y_transformation": "vast"},
+    "model_mmad": {"y_transformation": "mmad"}
          }
 
 #%%
