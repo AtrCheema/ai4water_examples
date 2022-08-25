@@ -12,6 +12,9 @@ from ai4water.experiments import MLRegressionExperiments
 
 data = busan_beach()
 
+data
+
+#%%
 
 comparisons = MLRegressionExperiments(
     input_features=data.columns.tolist()[0:-1],
@@ -20,6 +23,7 @@ comparisons = MLRegressionExperiments(
     verbosity=0
 )
 
+#%%
 
 comparisons.fit(data=data,
                 run_type="dry_run",
@@ -31,6 +35,8 @@ comparisons.fit(data=data,
                          #"CatBoostRegressor",
                          "XGBRFRegressor"
                          ])
+
+#%%
 
 comparisons.compare_errors('r2')
 

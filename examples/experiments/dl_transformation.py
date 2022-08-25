@@ -17,6 +17,7 @@ data = busan_beach()
 input_features = data.columns.tolist()[0:-1]
 output_features = data.columns.tolist()[-1:]
 
+#%%
 
 class MyTransformationExperiments(TransformationExperiments):
 
@@ -37,12 +38,16 @@ class MyTransformationExperiments(TransformationExperiments):
             'y_transformation': y_transformation
         }
 
+#%%
+
 cases = {
     'model_None': {'y_transformation': 'none'},
     'model_robust': {'y_transformation': 'robust'},
     'model_quantile': {'y_transformation': 'quantile'},
     'model_log': {'y_transformation': {'method':'log', 'treat_negatives': True, 'replace_zeros': True}}
          }
+
+#%%
 
 search_space = [
     Integer(low=10, high=30, name='units', num_samples=10),
@@ -53,6 +58,9 @@ search_space = [
                             0.0001, 0.00009, 0.00007, 0.00005], name='lr'),
 
 ]
+
+#%%
+
 
 x0 = [16, "relu", 32, 0.0001]
 experiment = MyTransformationExperiments(
@@ -65,15 +73,25 @@ experiment = MyTransformationExperiments(
     epochs=5,
     exp_name = f"ecoli_lstm_y_exp_{dateandtime_now()}")
 
+#%%
+
 experiment.fit(data = data,
                run_type='dry_run'
                )
 
+#%%
+
 experiment.compare_errors('rmse')
+
+#%%
 
 experiment.compare_errors('r2')
 
+#%%
+
 experiment.compare_errors('nrmse')
+
+#%%
 
 experiment.taylor_plot()
 

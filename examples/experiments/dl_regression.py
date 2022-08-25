@@ -11,7 +11,8 @@ from ai4water.experiments import DLRegressionExperiments
 ########################################################
 
 data = busan_beach()
-
+data
+#%%
 
 comparisons = DLRegressionExperiments(
     input_features=data.columns.tolist()[0:-1],
@@ -23,6 +24,7 @@ comparisons = DLRegressionExperiments(
     verbosity=0
 )
 
+#%%
 
 comparisons.fit(data=data,
                 include=['MLP',
@@ -32,6 +34,8 @@ comparisons.fit(data=data,
                          #"TFT",
                          "LSTMAutoEncoder",
                          ])
+
+#%%
 
 comparisons.compare_errors('r2')
 

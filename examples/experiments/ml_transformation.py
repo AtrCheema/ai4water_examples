@@ -14,6 +14,7 @@ data = busan_beach()
 input_features = data.columns.tolist()[0:-1]
 output_features = data.columns.tolist()[-1:]
 
+#%%
 
 class MyTransformationExperiments(TransformationExperiments):
 
@@ -27,6 +28,8 @@ class MyTransformationExperiments(TransformationExperiments):
             'model': {"XGBRegressor": kwargs},
             'y_transformation': y_transformation
         }
+
+#%%
 
 cases = {
     'model_None': {'y_transformation': 'none'},
@@ -46,6 +49,7 @@ cases = {
     "model_mmad": {"y_transformation": "mmad"}
          }
 
+#%%
 
 num_samples=10
 search_space = [
@@ -66,7 +70,12 @@ Categorical(categories=['Median', 'Uniform', 'UniformAndQuantiles',
                         'MaxLogSum', 'MinEntropy', 'GreedyLogSum'], name='feature_border_type')
 ]
 
+#%%
+
 x0 = [10, 0.11, 1.0, 1.0, 0.2, 45, "Uniform"]
+
+#%%
+
 experiment = MyTransformationExperiments(
     cases=cases,
     input_features=input_features,
@@ -76,14 +85,25 @@ experiment = MyTransformationExperiments(
     verbosity=0,
     exp_name = f"xgb_y_exp_{dateandtime_now()}")
 
+
+#%%
+
 experiment.fit(data = data,
                run_type='dry_run'
                )
 
+#%%
 experiment.compare_errors('rmse')
 
+#%%
+
 experiment.compare_errors('r2')
+#%%
 
 experiment.compare_errors('nrmse')
 
+#%%
+
 experiment.taylor_plot()
+
+#%%
