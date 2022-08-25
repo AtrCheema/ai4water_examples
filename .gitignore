@@ -1,0 +1,14 @@
+
+.ipynb_checkpoints/
+__pycache__/
+.idea/
+
+# private stuff
+results/
+
+*catboost_info/
+
+# docs
+*build/
+docs/source/auto_examples/
+docs/source/gen_modules/
