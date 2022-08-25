@@ -7,7 +7,6 @@ Welcome to ai4water's examples!
 
 .. toctree::
    :maxdepth: 2
-   :caption: modules
 
    auto_examples/index
 

@@ -17,12 +17,13 @@ sys.path.insert(0, os.path.abspath('../..'))
 
 # -- Project information -----------------------------------------------------
 
-project = 'ai4water'
+project = 'ai4water_examples'
 copyright = '2022, Ather Abbas'
 author = 'Ather Abbas'
 
 # The full version, including alpha/beta/rc tags
-release = "1.04"
+import ai4water
+release = ai4water.__version__
 
 # -- General configuration ---------------------------------------------------
 
