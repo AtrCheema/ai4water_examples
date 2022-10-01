@@ -3,18 +3,25 @@
 Comparison of XGBRegressor with different transformations
 =========================================================
 """
-
+import site
+site.addsitedir("D:\\mytools\\AI4Water")
+from ai4water.datasets import busan_beach
+from ai4water.utils.utils import get_version_info
 from ai4water.experiments import TransformationExperiments
 from ai4water.hyperopt import Categorical, Integer, Real
 from ai4water.utils.utils import dateandtime_now
 
-from ai4water.datasets import busan_beach
+
+for k,v in get_version_info().items():
+    print(f"{k} version: {v}")
+
+# %%
 
 data = busan_beach()
 input_features = data.columns.tolist()[0:-1]
 output_features = data.columns.tolist()[-1:]
 
-#%%
+# %%
 
 class MyTransformationExperiments(TransformationExperiments):
 
@@ -29,7 +36,7 @@ class MyTransformationExperiments(TransformationExperiments):
             'y_transformation': y_transformation
         }
 
-#%%
+# %%
 
 cases = {
     'model_None': {'y_transformation': 'none'},
@@ -45,11 +52,11 @@ cases = {
     'model_log': {'y_transformation': {'method':'log', 'treat_negatives': True, 'replace_zeros': True}},
     'model_log10': {'y_transformation': {'method':'log10', 'treat_negatives': True, 'replace_zeros': True}},
     "model_pareto": {"y_transformation": "pareto"},
-    "model_vast": {"y_transformation": "vast"},
+    #"model_vast": {"y_transformation": "vast"},
     "model_mmad": {"y_transformation": "mmad"}
          }
 
-#%%
+# %%
 
 num_samples=10
 search_space = [
@@ -70,11 +77,11 @@ Categorical(categories=['Median', 'Uniform', 'UniformAndQuantiles',
                         'MaxLogSum', 'MinEntropy', 'GreedyLogSum'], name='feature_border_type')
 ]
 
-#%%
+# %%
 
 x0 = [10, 0.11, 1.0, 1.0, 0.2, 45, "Uniform"]
 
-#%%
+# %%
 
 experiment = MyTransformationExperiments(
     cases=cases,
@@ -86,24 +93,29 @@ experiment = MyTransformationExperiments(
     exp_name = f"xgb_y_exp_{dateandtime_now()}")
 
 
+# %%
+
+experiment.fit(data = data, run_type='dry_run')
+
+# %%
+experiment.compare_errors('rmse', data=data)
+
+# %%
+
+experiment.compare_errors('r2', data=data)
 #%%
 
-experiment.fit(data = data,
-               run_type='dry_run'
-               )
-
-#%%
-experiment.compare_errors('rmse')
+experiment.compare_errors('nrmse', data=data)
 
 #%%
 
-experiment.compare_errors('r2')
-#%%
+experiment.taylor_plot(data=data)
 
-experiment.compare_errors('nrmse')
+# %%
+experiment.compare_edf_plots(data=data)
 
-#%%
+# %%
+experiment.compare_regression_plots(data=data)
 
-experiment.taylor_plot()
-
-#%%
+# %%
+experiment.compare_residual_plots(data=data)

@@ -4,14 +4,18 @@ Building neural netowrks with tensorflow
 ========================================
 """
 
+# sphinx_gallery_thumbnail_number = -2
+import site
+site.addsitedir("D:\\mytools\\AI4Water")
+
 from ai4water import Model
 from ai4water.datasets import busan_beach
-import pandas as pd
+from ai4water.utils.utils import get_version_info
 
-# sphinx_gallery_thumbnail_number = -2
+for k,v in get_version_info().items():
+    print(f"{k} version: {v}")
 
-###########################################################
-
+# %%
 
 data = busan_beach()
 

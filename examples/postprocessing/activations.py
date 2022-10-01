@@ -4,15 +4,20 @@ Activations
 ===========
 """
 
+import site
+site.addsitedir("D:\\mytools\\AI4Water")
+
 # This notebook shows how to use activation functions as activation within
 # layer or as activation functions.
 
 # sphinx_gallery_thumbnail_number = 2
+
 import tensorflow as tf
 tf.compat.v1.disable_eager_execution()
 
 from ai4water.functional import Model
 from ai4water.postprocessing import Visualize
+from ai4water.utils.utils import get_version_info
 
 
 import pandas as pd
@@ -20,7 +25,8 @@ import numpy as np
 
 assert tf.__version__ == "2.7.0"
 
-print(np.__version__)
+for k,v in get_version_info().items():
+    print(f"{k} version: {v}")
 
 ##############################################################
 

@@ -7,16 +7,12 @@ sphinx_rtd_theme
 sphinx_issues
 scipy
 scikit-learn
-scikit-optimize
 tensorflow==2.7
 protobuf==3.19.1
 keras-tcn
-seaborn
-easy_mpl
-SeqMetrics
+
 sphinx-gallery
 xgboost
-optuna
 
 # for hru discretization examples
 pyshp
@@ -28,4 +24,9 @@ lime
 
 #
 PDPbox1
-AI4Water==1.05
+
+git+https://github.com/AtrCheema/AI4Water.git@dev
+
+git+https://github.com/AtrCheema/SeqMetrics.git
+
+git+https://github.com/Sara-Iftikhar/easy_mpl.git@dev

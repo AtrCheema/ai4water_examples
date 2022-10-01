@@ -5,12 +5,21 @@ postprocessing of prediction results
 This file shows how to post-process prediction results
 """
 
-from ai4water.datasets import busan_beach
+import site
+site.addsitedir("D:\\mytools\\AI4Water")
+site.addsitedir("D:\\playground\\ai4w_enhancements\\PDPbox1")
+
 from ai4water import Model
+from ai4water.datasets import busan_beach
+from ai4water.utils.utils import get_version_info
 
 # sphinx_gallery_thumbnail_number = -1
 
 #%%
+
+for k,v in get_version_info().items():
+    print(f"{k} version: {v}")
+# %%
 
 model = Model(model="XGBRegressor")
 #%%

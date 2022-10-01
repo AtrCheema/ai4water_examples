@@ -7,16 +7,23 @@ class is a wrapper around ``LIME`` library. It helps in making plots which expla
 individual examples/samples of data.
 """
 
+import site
+site.addsitedir("D:\\mytools\\AI4Water")
+
 from ai4water import Model
 from ai4water.datasets import busan_beach
+from ai4water.utils.utils import get_version_info
 from ai4water.postprocessing.explain import LimeExplainer
 
 # sphinx_gallery_thumbnail_number = 3
 
+for k,v in get_version_info().items():
+    print(f"{k} version: {v}")
+
 #%%
 
 data =busan_beach()
-data.shape
+print(data.shape)
 
 #%%
 model = Model(model="XGBRegressor",

@@ -4,7 +4,16 @@ Building Machine learning models for regression
 ===============================================
 """
 
+import site
+site.addsitedir("D:\\mytools\\AI4Water")
+
 from ai4water import Model
+from ai4water.utils.utils import get_version_info
+
+
+for k,v in get_version_info().items():
+    print(f"{k} version: {v}")
+# %%
 
 model = Model(model="RandomForestRegressor")
 
