@@ -3,8 +3,7 @@
 Comparison of deep learning architectures
 =========================================
 """
-import site
-site.addsitedir("D:\\mytools\\AI4Water")
+
 from ai4water.datasets import busan_beach
 from ai4water.utils.utils import get_version_info
 from ai4water.experiments import DLRegressionExperiments

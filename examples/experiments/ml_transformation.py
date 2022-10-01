@@ -3,8 +3,7 @@
 Comparison of XGBRegressor with different transformations
 =========================================================
 """
-import site
-site.addsitedir("D:\\mytools\\AI4Water")
+
 from ai4water.datasets import busan_beach
 from ai4water.utils.utils import get_version_info
 from ai4water.experiments import TransformationExperiments
@@ -52,7 +51,7 @@ cases = {
     'model_log': {'y_transformation': {'method':'log', 'treat_negatives': True, 'replace_zeros': True}},
     'model_log10': {'y_transformation': {'method':'log10', 'treat_negatives': True, 'replace_zeros': True}},
     "model_pareto": {"y_transformation": "pareto"},
-    #"model_vast": {"y_transformation": "vast"},
+    "model_vast": {"y_transformation": "vast"},
     "model_mmad": {"y_transformation": "mmad"}
          }
 
@@ -90,6 +89,7 @@ experiment = MyTransformationExperiments(
     param_space=search_space,
     x0=x0,
     verbosity=0,
+    split_random=True,
     exp_name = f"xgb_y_exp_{dateandtime_now()}")
 
 
@@ -103,6 +103,10 @@ experiment.compare_errors('rmse', data=data)
 # %%
 
 experiment.compare_errors('r2', data=data)
+
+# %%
+experiment.compare_errors('r2_score', data=data)
+
 #%%
 
 experiment.compare_errors('nrmse', data=data)

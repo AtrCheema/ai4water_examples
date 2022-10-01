@@ -3,8 +3,6 @@
 Comparison of LSTM with different transformations
 =================================================
 """
-import site
-site.addsitedir("D:\\mytools\\AI4Water")
 
 from ai4water.models import LSTM
 from ai4water.utils.utils import get_version_info
@@ -54,7 +52,7 @@ cases = {
     'model_quantile': {'y_transformation': 'quantile'},
     'model_log': {'y_transformation': {'method':'log', 'treat_negatives': True, 'replace_zeros': True}},
     "model_pareto": {"y_transformation": "pareto"},
-    #"model_vast": {"y_transformation": "vast"},
+    "model_vast": {"y_transformation": "vast"},
     "model_mmad": {"y_transformation": "mmad"}
          }
 
@@ -87,9 +85,7 @@ experiment = MyTransformationExperiments(
 
 #%%
 
-experiment.fit(data = data,
-               run_type='dry_run'
-               )
+experiment.fit(data = data,  run_type='dry_run')
 
 #%%
 

@@ -3,8 +3,7 @@
 Comparison of machine learning algorithms
 =========================================
 """
-import site
-site.addsitedir("D:\\mytools\\AI4Water")
+
 from ai4water.datasets import busan_beach
 from ai4water.utils.utils import get_version_info
 from ai4water.experiments import MLRegressionExperiments
@@ -48,16 +47,21 @@ best_models = comparisons.compare_errors(
 
 comparisons.taylor_plot(data=data)
 
-
 #%%
 
 comparisons.taylor_plot(data=data)
 
 # %%
+
 comparisons.compare_edf_plots(data=data)
 
 # %%
-comparisons.compare_regression_plots(data=data)
+
+comparisons.compare_edf_plots(data=data, exclude=["SGDRegressor", "KernelRidge", "PoissonRegressor"])
 
 # %%
-comparisons.compare_residual_plots(data=data)
+
+comparisons.compare_regression_plots(data=data, figsize=(12, 14))
+
+# %%
+comparisons.compare_residual_plots(data=data, figsize=(12, 14))
