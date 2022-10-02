@@ -62,7 +62,7 @@ search_space = [
 # maximum number of trees that can be built
 Integer(low=10, high=30, name='iterations', num_samples=num_samples),
 # Used for reducing the gradient step.
-Real(low=0.09, high=0.3, prior='log', name='learning_rate', num_samples=num_samples),
+Real(low=0.09, high=0.3, prior='log-uniform', name='learning_rate', num_samples=num_samples),
 # Coefficient at the L2 regularization term of the cost function.
 Real(low=0.5, high=5.0, name='l2_leaf_reg', num_samples=num_samples),
 # arger the value, the smaller the model size.
