@@ -9,7 +9,7 @@ site.addsitedir("D:\\mytools\\AI4Water")
 import os
 
 import ai4water
-from ai4water.utils import get_version_info
+from ai4water.utils.utils import get_version_info
 from ai4water.preprocessing.spatial_processing import MakeHRUs
 
 for k,v in get_version_info().items():

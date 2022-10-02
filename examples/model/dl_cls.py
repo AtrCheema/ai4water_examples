@@ -6,9 +6,6 @@ This file shows how to build neural networks for a classification problem.
 
 """
 
-import site
-site.addsitedir("D:\\mytools\\AI4Water")
-
 import numpy as np
 import pandas as pd
 

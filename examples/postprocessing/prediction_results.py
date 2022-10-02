@@ -5,10 +5,6 @@ postprocessing of prediction results
 This file shows how to post-process prediction results
 """
 
-import site
-site.addsitedir("D:\\mytools\\AI4Water")
-site.addsitedir("D:\\playground\\ai4w_enhancements\\PDPbox1")
-
 from ai4water import Model
 from ai4water.datasets import busan_beach
 from ai4water.utils.utils import get_version_info

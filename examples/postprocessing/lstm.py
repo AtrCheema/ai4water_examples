@@ -4,9 +4,6 @@ Visualizing inside LSTM
 =======================
 """
 
-import site
-site.addsitedir("D:\\mytools\\AI4Water")
-
 import tensorflow as tf
 tf.compat.v1.disable_eager_execution()
 

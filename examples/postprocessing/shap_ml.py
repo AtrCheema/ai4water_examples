@@ -7,9 +7,6 @@ class is a wrapper around ``SHAP`` library. It helps in making plots which expla
 individual examples/samples of data.
 """
 
-import site
-site.addsitedir("D:\\mytools\\AI4Water")
-
 from ai4water import Model
 from ai4water.datasets import busan_beach
 from ai4water.utils.utils import get_version_info

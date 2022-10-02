@@ -4,9 +4,6 @@ Activations
 ===========
 """
 
-import site
-site.addsitedir("D:\\mytools\\AI4Water")
-
 # This notebook shows how to use activation functions as activation within
 # layer or as activation functions.
 

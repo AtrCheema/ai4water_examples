@@ -6,8 +6,7 @@ cross validation
 
 # This example shows how to app different cross
 # validation techniques using ai4water
-import site
-site.addsitedir("D:\\mytools\\AI4Water")
+
 from ai4water import Model
 from ai4water.preprocessing import DataSet
 from ai4water.datasets import busan_beach
