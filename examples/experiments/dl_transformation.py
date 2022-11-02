@@ -80,7 +80,8 @@ experiment = MyTransformationExperiments(
     verbosity=0,
     epochs=5,
     exp_name = f"ecoli_lstm_y_exp_{dateandtime_now()}",
-    ts_args={"lookback": lookback}
+    ts_args={"lookback": lookback},
+    save=False
 )
 
 #%%

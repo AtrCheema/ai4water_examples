@@ -23,7 +23,8 @@ comparisons = MLRegressionExperiments(
     input_features=data.columns.tolist()[0:-1],
     output_features=data.columns.tolist()[-1:],
     split_random=True,
-    verbosity=0
+    verbosity=0,
+    save=False,
 )
 
 # %%

@@ -25,7 +25,8 @@ comparisons = DLRegressionExperiments(
     val_fraction=0.0,
     epochs=20,
     ts_args={"lookback": 12},
-    verbosity=0
+    verbosity=0,
+    save=False,
 )
 
 #%%

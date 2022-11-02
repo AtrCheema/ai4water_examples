@@ -90,7 +90,9 @@ experiment = MyTransformationExperiments(
     x0=x0,
     verbosity=0,
     split_random=True,
-    exp_name = f"xgb_y_exp_{dateandtime_now()}")
+    exp_name = f"xgb_y_exp_{dateandtime_now()}",
+    save=False
+)
 
 
 # %%
