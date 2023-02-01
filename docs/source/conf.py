@@ -42,6 +42,8 @@ extensions = [
 "sphinx-prompt",
 "sphinx_gallery.gen_gallery",
 'sphinx.ext.ifconfig',
+    'sphinx_toggleprompt',
+    'sphinx_copybutton',
 ]
 
 toggleprompt_offset_right  = 30

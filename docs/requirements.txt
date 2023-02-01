@@ -5,6 +5,9 @@ sphinx
 sphinx-prompt
 sphinx_rtd_theme
 sphinx_issues
+sphinx_copybutton
+sphinx_toggleprompt
+
 scipy
 scikit-learn
 tensorflow==2.7
