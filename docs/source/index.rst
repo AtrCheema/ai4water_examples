@@ -6,9 +6,11 @@ Welcome to ai4water's examples!
 .. image:: imgs/monogram.png
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
+   :caption: Notebooks
 
-   auto_examples/index
+   _notebooks/main
+
 
 
 Indices and tables

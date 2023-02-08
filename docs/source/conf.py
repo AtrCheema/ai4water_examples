@@ -44,6 +44,8 @@ extensions = [
 'sphinx.ext.ifconfig',
     'sphinx_toggleprompt',
     'sphinx_copybutton',
+'nbsphinx',
+'sphinx_gallery.load_style',
 ]
 
 toggleprompt_offset_right  = 30
@@ -59,7 +61,7 @@ templates_path = ['_templates']
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = []
 
-sphinx_gallery_conf = {
+sphinx_gallery_conf1 = {
     'backreferences_dir': 'gen_modules/backreferences',
     #'doc_module': ('sphinx_gallery', 'numpy'),
     'reference_url': {
