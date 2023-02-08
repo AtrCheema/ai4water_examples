@@ -7,6 +7,10 @@ sphinx_rtd_theme
 sphinx_issues
 sphinx_copybutton
 sphinx_toggleprompt
+nbsphinx
+sphinx_codeautolink
+sphinxcontrib.bibtex
+sphinxcontrib-svg2pdfconverter
 
 scipy
 scikit-learn
