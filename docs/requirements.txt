@@ -11,6 +11,8 @@ nbsphinx
 sphinx_codeautolink
 sphinxcontrib.bibtex
 sphinxcontrib-svg2pdfconverter
+ipykernel
+jinja2
 
 scipy
 scikit-learn
