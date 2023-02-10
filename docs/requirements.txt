@@ -5,18 +5,21 @@ sphinx
 sphinx-prompt
 sphinx_rtd_theme
 sphinx_issues
+sphinx_copybutton
+sphinx_toggleprompt
+nbsphinx
+sphinx_codeautolink
+sphinxcontrib.bibtex
+sphinxcontrib-svg2pdfconverter
+
 scipy
 scikit-learn
-scikit-optimize
 tensorflow==2.7
 protobuf==3.19.1
 keras-tcn
-seaborn
-easy_mpl
-SeqMetrics
+
 sphinx-gallery
 xgboost
-optuna
 
 # for hru discretization examples
 pyshp
@@ -27,5 +30,6 @@ shap
 lime
 
 #
-PDPbox1
-AI4Water==1.05
+
+
+git+https://github.com/AtrCheema/AI4Water.git@dev

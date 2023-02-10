@@ -3,11 +3,18 @@
 HRU discretization
 ==================
 """
+import site
+site.addsitedir("D:\\mytools\\AI4Water")
 
 import os
 
 import ai4water
+from ai4water.utils.utils import get_version_info
 from ai4water.preprocessing.spatial_processing import MakeHRUs
+
+for k,v in get_version_info().items():
+    print(f"{k} version: {v}")
+# %%
 
 ai4water_dir = os.path.dirname(os.path.dirname(ai4water.__file__))
 shapefile_paths = os.path.join(os.getcwd(), 'shapefiles')

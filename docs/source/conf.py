@@ -11,9 +11,6 @@
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
 import os
-import sys
-sys.path.insert(0, os.path.abspath('../..'))
-
 
 # -- Project information -----------------------------------------------------
 
@@ -43,9 +40,67 @@ extensions = [
 'sphinx.ext.napoleon',
 'sphinx.ext.githubpages',
 "sphinx-prompt",
-"sphinx_gallery.gen_gallery",
+#"sphinx_gallery.gen_gallery",
 'sphinx.ext.ifconfig',
+    'sphinx_toggleprompt',
+    'sphinx_copybutton',
+'nbsphinx',
+'sphinx_gallery.load_style',
+'sphinx_codeautolink',  # automatic links from code to documentation
+'sphinxcontrib.bibtex',  # for bibliographic references
+'sphinxcontrib.rsvgconverter',  # for SVG->PDF conversion in LaTeX output
 ]
+
+# These projects are also used for the sphinx_codeautolink extension:
+intersphinx_mapping = {
+    'IPython': ('https://ipython.readthedocs.io/en/stable/', None),
+    'matplotlib': ('https://matplotlib.org/', None),
+    'numpy': ('https://docs.scipy.org/doc/numpy/', None),
+    'pandas': ('https://pandas.pydata.org/docs/', None),
+    'python': ('https://docs.python.org/3/', None),
+}
+
+bibtex_bibfiles = ['references.bib']
+
+# This is processed by Jinja2 and inserted before each notebook
+nbsphinx_prolog = r"""
+{% set docname = 'doc/' + env.doc2path(env.docname, base=None) %}
+.. raw:: html
+    <div class="admonition note">
+      This page was generated from
+      <a class="reference external" href="https://github.com/AtrCheema/ai4water_examples/blob/{{ env.config.release|e }}/{{ docname|e }}">{{ docname|e }}</a>.
+      Interactive online version:
+      <span style="white-space: nowrap;"><a href="https://mybinder.org/v2/gh/AtrCheema/ai4water_examples/{{ env.config.release|e }}?filepath={{ docname|e }}"><img alt="Binder badge" src="https://mybinder.org/badge_logo.svg" style="vertical-align:text-bottom"></a>.</span>
+      <script>
+        if (document.location.host) {
+          let nbviewer_link = document.createElement('a');
+          nbviewer_link.setAttribute('href',
+            'https://nbviewer.org/url' +
+            (window.location.protocol == 'https:' ? 's/' : '/') +
+            window.location.host +
+            window.location.pathname.slice(0, -4) +
+            'ipynb');
+          nbviewer_link.innerHTML = 'View in <em>nbviewer</em>';
+          nbviewer_link.classList.add('reference');
+          nbviewer_link.classList.add('external');
+          document.currentScript.replaceWith(nbviewer_link, '.');
+        }
+      </script>
+    </div>
+.. raw:: latex
+    \nbsphinxstartnotebook{\scriptsize\noindent\strut
+    \textcolor{gray}{The following section was generated from
+    \sphinxcode{\sphinxupquote{\strut {{ docname | escape_latex }}}} \dotfill}}
+"""
+
+# This is processed by Jinja2 and inserted after each notebook
+nbsphinx_epilog = r"""
+{% set docname = 'doc/' + env.doc2path(env.docname, base=None) %}
+.. raw:: latex
+    \nbsphinxstopnotebook{\scriptsize\noindent\strut
+    \textcolor{gray}{\dotfill\ \sphinxcode{\sphinxupquote{\strut
+    {{ docname | escape_latex }}}} ends here.}}
+"""
 
 toggleprompt_offset_right  = 30
 
@@ -60,7 +115,7 @@ templates_path = ['_templates']
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = []
 
-sphinx_gallery_conf = {
+sphinx_gallery_conf1 = {
     'backreferences_dir': 'gen_modules/backreferences',
     #'doc_module': ('sphinx_gallery', 'numpy'),
     'reference_url': {
@@ -76,7 +131,7 @@ sphinx_gallery_conf = {
                'branch': 'master',
                'binderhub_url': 'https://mybinder.org',
                'dependencies': os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), '.binder', 'requirements.txt'),
-               'notebooks_dir': 'notebooks',
+               'notebooks_dir': '_notebooks',
                'use_jupyter_lab': True,
                },
     #'show_memory': True,

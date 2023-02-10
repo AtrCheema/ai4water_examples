@@ -8,6 +8,9 @@ results/
 
 *catboost_info/
 
+*.txt
+*.h5
+
 # docs
 *build/
 docs/source/auto_examples/

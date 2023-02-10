@@ -10,23 +10,27 @@ tf.compat.v1.disable_eager_execution()
 from ai4water.functional import Model
 from ai4water.models import LSTM
 from ai4water.datasets import busan_beach
+from ai4water.utils.utils import get_version_info
 from ai4water.postprocessing import Visualize
 
 # sphinx_gallery_thumbnail_number = 2
 
-#%%
-data = busan_beach()
-data.shape
+for k,v in get_version_info().items():
+    print(f"{k} version: {v}")
+# %%
 
-#%%
+data = busan_beach()
+print(data.shape)
+
+# %%
 input_features = data.columns.tolist()[0:-1]
 output_features = data.columns.tolist()[-1:]
 
-#%%
+# %%
 
 lookback = 14
 
-#%%
+# %%
 
 model = Model(
     model=LSTM(

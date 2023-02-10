@@ -6,17 +6,18 @@ machine learning for classification
 
 import numpy as np
 import pandas as pd
-import ai4water
+
 from ai4water import Model
+from ai4water.utils.utils import get_version_info
 from sklearn.datasets import load_breast_cancer
 
-ai4water.__version__
+
+for k,v in get_version_info().items():
+    print(f"{k} version: {v}")
 
 #%%
 
 bunch = load_breast_cancer()
-
-
 
 #%%
 
@@ -24,7 +25,8 @@ data = pd.DataFrame(np.column_stack([
     bunch['data'][0:1000, :], bunch['target'][0:1000,]
 ]),
     columns=bunch['feature_names'].tolist() + ['diagnostic'])
-data.shape
+
+print(data.shape)
 
 #%%
 

@@ -5,14 +5,19 @@ neural networks for classification
 This file shows how to build neural networks for a classification problem.
 
 """
+
 import numpy as np
 import pandas as pd
 
 from ai4water import Model
 from ai4water.models import MLP
+from ai4water.utils.utils import get_version_info
 from sklearn.datasets import load_breast_cancer
 
 #%%
+for k,v in get_version_info().items():
+    print(f"{k} version: {v}")
+# %%
 
 bunch = load_breast_cancer()
 
@@ -23,7 +28,7 @@ data = pd.DataFrame(np.column_stack([
 
 del bunch
 
-data.shape
+print(data.shape)
 
 #%%
 
