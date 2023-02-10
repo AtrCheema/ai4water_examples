@@ -6,7 +6,7 @@ Welcome to ai4water's examples!
 .. image:: imgs/monogram.png
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 5
    :caption: Notebooks
 
    _notebooks/main
