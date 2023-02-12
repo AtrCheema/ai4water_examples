@@ -30,8 +30,3 @@ shapely
 #
 shap
 lime
-
-#
-
-
-git+https://github.com/AtrCheema/AI4Water.git@dev
