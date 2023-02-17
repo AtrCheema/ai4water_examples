@@ -6,10 +6,10 @@ Modle Building
    :maxdepth: 3
 
    Data Preparation for Regression task <model/data_prep_rgr.ipynb>
+   Data splitting <model/data_splitting.ipynb>
    Building Machine Learning model for regression <model/ml_rgr.ipynb>
    Data preparation for classification task <model/data_prep_cls.ipynb>
    Building Machine Learning model for classification <model/ml_rgr.ipynb>
-   Loading an existing model from config <model/from_config.ipynb>
    Cross Validation <model/cross_val_rf.ipynb>
    Building Neural Network for regression <model/dl_rgr.ipynb>
    Building Neural Network for classification <model/dl_rgr.ipynb>
@@ -19,6 +19,7 @@ Modle Building
    FT Transformer <model/ft_transformer.ipynb>
    Input Attention LSTM model <model/interpretability_ia.ipynb>
    Temporal Fusion Transformer Model <model/tft.ipynb>
+   Loading an existing model from config <model/from_config.ipynb>
 
 
 Preprocessing
@@ -31,17 +32,6 @@ Preprocessing
    Missing data imputation <preprocessing/imputation.ipynb>
    HRU discretization <preprocessing/hru_discretization.ipynb>
    HRU discretization for Laos <preprocessing/hru_discretization_laos.ipynb>
-
-
-Datasets
-==============
-.. toctree::
-   :maxdepth: 3
-
-   Beach Water Quality of Busan <datasets/busan_beach.ipynb>
-   Mtropics dataset from Laos <datasets/mtropics_laos.ipynb>
-   Global River Water Quality data <datasets/grqa.ipynb>
-   Quadica <datasets/quadica.ipynb>
 
 
 Hyperparameter Optimization (HPO)
@@ -79,3 +69,14 @@ Postprocessing
    permutation importance with categorical features <postprocessing/pimp_rgr_cat.ipynb>
    visualizing layers of neural networks <postprocessing/vis_nn_lyrs.ipynb>
    peeking inside LSTM <postprocessing/vis_lstm.ipynb>
+
+
+Datasets
+==============
+.. toctree::
+   :maxdepth: 3
+
+   Beach Water Quality of Busan <datasets/busan_beach.ipynb>
+   Mtropics dataset from Laos <datasets/mtropics_laos.ipynb>
+   Global River Water Quality data <datasets/grqa.ipynb>
+   Quadica <datasets/quadica.ipynb>
