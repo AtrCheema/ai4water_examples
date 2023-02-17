@@ -9,7 +9,7 @@ Welcome to ai4water's examples!
    :maxdepth: 5
    :caption: Notebooks
 
-   _notebooks/main
+   _notebooks/index
 
 
 
