@@ -2,8 +2,7 @@
 Modle Building
 ===============
 
-.. toctree::
-   :maxdepth: 3
+
 
    Data Preparation for Regression task <model/data_prep_rgr.ipynb>
    Data splitting <model/data_splitting.ipynb>
@@ -25,8 +24,6 @@ Modle Building
 Preprocessing
 ==============
 
-.. toctree::
-   :maxdepth: 3
 
    Feature engineering through transformations <preprocessing/transformations.ipynb>
    Missing data imputation <preprocessing/imputation.ipynb>
