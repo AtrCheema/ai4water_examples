@@ -4,7 +4,7 @@
 
 Examples related to [ai4water](https://ai4water.readthedocs.io/) library.
 
-Modle Building
+Model Building
 ===============
 
    * [Data Preparation for Regression task](model/data_prep_rgr.ipynb)

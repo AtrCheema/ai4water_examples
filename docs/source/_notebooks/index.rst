@@ -1,8 +1,8 @@
 
-Modle Building
+Model Building
 ===============
-
-
+.. toctree::
+   :maxdepth: 3
 
    Data Preparation for Regression task <model/data_prep_rgr.ipynb>
    Data splitting <model/data_splitting.ipynb>
@@ -23,7 +23,8 @@ Modle Building
 
 Preprocessing
 ==============
-
+.. toctree::
+   :maxdepth: 3
 
    Feature engineering through transformations <preprocessing/transformations.ipynb>
    Missing data imputation <preprocessing/imputation.ipynb>
@@ -53,6 +54,7 @@ Experiments
    Comparing neural network architectures for classification <experiments/dl_cls_exp.ipynb>
    Comparing performance of RF with data transformations <experiments/ml_transformation.ipynb>
    Effect of transformation on LSTM performance <experiments/dl_transformation.ipynb>
+
 
 Postprocessing
 ================
