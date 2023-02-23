@@ -16,6 +16,7 @@ Model Building
    * [Building Neural Network for regression ](docs/source/_notebooks/model/dl_rgr.ipynb)
    * [Building Neural Network for classification ](docs/source/_notebooks/model/dl_rgr.ipynb)
    * [Data preparation for time-series prediction ](docs/source/_notebooks/model/data_prep_ts.ipynb)
+   * [Performance Metrics ](docs/source/_notebooks/model/performance_metrics.ipynb)
    * [LSTM for time series prediction ](docs/source/_notebooks/model/lstm_rgr.ipynb)
    * [Tab Transformer ](docs/source/_notebooks/model/tab_transformer.ipynb)
    * [FT Transformer ](docs/source/_notebooks/model/ft_transformer.ipynb)

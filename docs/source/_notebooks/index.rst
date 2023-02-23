@@ -12,6 +12,7 @@ Model Building
    Cross Validation <model/cross_val_rf.ipynb>
    Building Neural Network for regression <model/dl_rgr.ipynb>
    Building Neural Network for classification <model/dl_rgr.ipynb>
+   Performance Metrics <model/performance_metrics.ipynb>
    Data preparation for time-series prediction <model/data_prep_ts.ipynb>
    LSTM for time series prediction <model/lstm_rgr.ipynb>
    Tab Transformer <model/tab_transformer.ipynb>
