@@ -1,0 +1,1301 @@
+{
+    "config": {
+        "drop_remainder": false,
+        "category": "DL",
+        "mode": "regression",
+        "batch_size": 16,
+        "split_random": false,
+        "val_fraction": 0.2,
+        "indices": null,
+        "train_fraction": 0.7,
+        "save": false,
+        "allow_nan_labels": 0,
+        "nan_filler": null,
+        "seed": 313,
+        "input_features": [
+            "et_morton_point_SILO",
+            "precipitation_AWAP",
+            "tmax_AWAP",
+            "tmin_AWAP",
+            "vprp_AWAP",
+            "rh_tmax_SILO",
+            "rh_tmin_SILO"
+        ],
+        "output_features": [
+            "streamflow_MLd"
+        ],
+        "intervals": null,
+        "verbosity": 1,
+        "teacher_forcing": false,
+        "dataset_args": {},
+        "ts_args": {
+            "lookback": 15,
+            "forecast_len": 1,
+            "forecast_step": 0,
+            "known_future_inputs": false,
+            "input_steps": 1,
+            "output_steps": 1
+        },
+        "x_transformer_": {
+            "transformers_": {
+                "5_0_robust_0": {
+                    "transformer": {
+                        "robust": {
+                            "params": {
+                                "copy": true,
+                                "quantile_range": [
+                                    25.0,
+                                    75.0
+                                ],
+                                "with_centering": true,
+                                "with_scaling": true
+                            },
+                            "config": {
+                                "scale_": [
+                                    3.754517674446106,
+                                    10.67794942855835,
+                                    7.315242871642113,
+                                    4.014291524887085,
+                                    23.000926971435547
+                                ],
+                                "center_": [
+                                    2.910334587097168,
+                                    13.80141830444336,
+                                    3.65749192237854,
+                                    8.750204086303711,
+                                    51.66151428222656
+                                ]
+                            }
+                        }
+                    },
+                    "shape": [
+                        14818,
+                        7
+                    ],
+                    "method": "robust",
+                    "features": [
+                        "et_morton_point_SILO",
+                        "tmax_AWAP",
+                        "tmin_AWAP",
+                        "vprp_AWAP",
+                        "rh_tmax_SILO"
+                    ],
+                    "replace_zeros": false,
+                    "replace_zeros_with": 1,
+                    "treat_negatives": false,
+                    "kwargs": {}
+                },
+                "5_0_log_1": {
+                    "transformer": {
+                        "log": {
+                            "params": {},
+                            "config": {
+                                "data_dim_": 2
+                            }
+                        }
+                    },
+                    "shape": [
+                        14818,
+                        7
+                    ],
+                    "method": "log",
+                    "features": [
+                        "precipitation_AWAP",
+                        "rh_tmin_SILO"
+                    ],
+                    "replace_zeros": true,
+                    "replace_zeros_with": 1,
+                    "treat_negatives": false,
+                    "kwargs": {}
+                },
+                "5_1_robust_0": {
+                    "transformer": {
+                        "robust": {
+                            "params": {
+                                "copy": true,
+                                "quantile_range": [
+                                    25.0,
+                                    75.0
+                                ],
+                                "with_centering": true,
+                                "with_scaling": true
+                            },
+                            "config": {
+                                "scale_": [
+                                    3.754460781812668,
+                                    10.679558753967285,
+                                    7.3155577182769775,
+                                    4.014291524887085,
+                                    23.00391674041748
+                                ],
+                                "center_": [
+                                    2.9086203575134277,
+                                    13.799734115600586,
+                                    3.6555800437927246,
+                                    8.750204086303711,
+                                    51.663612365722656
+                                ]
+                            }
+                        }
+                    },
+                    "shape": [
+                        14818,
+                        7
+                    ],
+                    "method": "robust",
+                    "features": [
+                        "et_morton_point_SILO",
+                        "tmax_AWAP",
+                        "tmin_AWAP",
+                        "vprp_AWAP",
+                        "rh_tmax_SILO"
+                    ],
+                    "replace_zeros": false,
+                    "replace_zeros_with": 1,
+                    "treat_negatives": false,
+                    "kwargs": {}
+                },
+                "5_1_log_1": {
+                    "transformer": {
+                        "log": {
+                            "params": {},
+                            "config": {
+                                "data_dim_": 2
+                            }
+                        }
+                    },
+                    "shape": [
+                        14818,
+                        7
+                    ],
+                    "method": "log",
+                    "features": [
+                        "precipitation_AWAP",
+                        "rh_tmin_SILO"
+                    ],
+                    "replace_zeros": true,
+                    "replace_zeros_with": 1,
+                    "treat_negatives": false,
+                    "kwargs": {}
+                },
+                "5_2_robust_0": {
+                    "transformer": {
+                        "robust": {
+                            "params": {
+                                "copy": true,
+                                "quantile_range": [
+                                    25.0,
+                                    75.0
+                                ],
+                                "with_centering": true,
+                                "with_scaling": true
+                            },
+                            "config": {
+                                "scale_": [
+                                    3.7547125220298767,
+                                    10.67972707748413,
+                                    7.315905459225178,
+                                    4.014291524887085,
+                                    22.99512767791748
+                                ],
+                                "center_": [
+                                    2.9081003665924072,
+                                    13.798869132995605,
+                                    3.654017925262451,
+                                    8.750204086303711,
+                                    51.6671142578125
+                                ]
+                            }
+                        }
+                    },
+                    "shape": [
+                        14818,
+                        7
+                    ],
+                    "method": "robust",
+                    "features": [
+                        "et_morton_point_SILO",
+                        "tmax_AWAP",
+                        "tmin_AWAP",
+                        "vprp_AWAP",
+                        "rh_tmax_SILO"
+                    ],
+                    "replace_zeros": false,
+                    "replace_zeros_with": 1,
+                    "treat_negatives": false,
+                    "kwargs": {}
+                },
+                "5_2_log_1": {
+                    "transformer": {
+                        "log": {
+                            "params": {},
+                            "config": {
+                                "data_dim_": 2
+                            }
+                        }
+                    },
+                    "shape": [
+                        14818,
+                        7
+                    ],
+                    "method": "log",
+                    "features": [
+                        "precipitation_AWAP",
+                        "rh_tmin_SILO"
+                    ],
+                    "replace_zeros": true,
+                    "replace_zeros_with": 1,
+                    "treat_negatives": false,
+                    "kwargs": {}
+                },
+                "5_3_robust_0": {
+                    "transformer": {
+                        "robust": {
+                            "params": {
+                                "copy": true,
+                                "quantile_range": [
+                                    25.0,
+                                    75.0
+                                ],
+                                "with_centering": true,
+                                "with_scaling": true
+                            },
+                            "config": {
+                                "scale_": [
+                                    3.7539814114570618,
+                                    10.679358720779419,
+                                    7.31334825605154,
+                                    4.013975501060486,
+                                    22.990405082702637
+                                ],
+                                "center_": [
+                                    2.907848596572876,
+                                    13.798242568969727,
+                                    3.6536643505096436,
+                                    8.750016212463379,
+                                    51.6671142578125
+                                ]
+                            }
+                        }
+                    },
+                    "shape": [
+                        14818,
+                        7
+                    ],
+                    "method": "robust",
+                    "features": [
+                        "et_morton_point_SILO",
+                        "tmax_AWAP",
+                        "tmin_AWAP",
+                        "vprp_AWAP",
+                        "rh_tmax_SILO"
+                    ],
+                    "replace_zeros": false,
+                    "replace_zeros_with": 1,
+                    "treat_negatives": false,
+                    "kwargs": {}
+                },
+                "5_3_log_1": {
+                    "transformer": {
+                        "log": {
+                            "params": {},
+                            "config": {
+                                "data_dim_": 2
+                            }
+                        }
+                    },
+                    "shape": [
+                        14818,
+                        7
+                    ],
+                    "method": "log",
+                    "features": [
+                        "precipitation_AWAP",
+                        "rh_tmin_SILO"
+                    ],
+                    "replace_zeros": true,
+                    "replace_zeros_with": 1,
+                    "treat_negatives": false,
+                    "kwargs": {}
+                },
+                "5_4_robust_0": {
+                    "transformer": {
+                        "robust": {
+                            "params": {
+                                "copy": true,
+                                "quantile_range": [
+                                    25.0,
+                                    75.0
+                                ],
+                                "with_centering": true,
+                                "with_scaling": true
+                            },
+                            "config": {
+                                "scale_": [
+                                    3.754334658384323,
+                                    10.678627729415894,
+                                    7.31410426646471,
+                                    4.014030933380127,
+                                    22.99784564971924
+                                ],
+                                "center_": [
+                                    2.907710552215576,
+                                    13.79758071899414,
+                                    3.6532702445983887,
+                                    8.749361038208008,
+                                    51.671077728271484
+                                ]
+                            }
+                        }
+                    },
+                    "shape": [
+                        14818,
+                        7
+                    ],
+                    "method": "robust",
+                    "features": [
+                        "et_morton_point_SILO",
+                        "tmax_AWAP",
+                        "tmin_AWAP",
+                        "vprp_AWAP",
+                        "rh_tmax_SILO"
+                    ],
+                    "replace_zeros": false,
+                    "replace_zeros_with": 1,
+                    "treat_negatives": false,
+                    "kwargs": {}
+                },
+                "5_4_log_1": {
+                    "transformer": {
+                        "log": {
+                            "params": {},
+                            "config": {
+                                "data_dim_": 2
+                            }
+                        }
+                    },
+                    "shape": [
+                        14818,
+                        7
+                    ],
+                    "method": "log",
+                    "features": [
+                        "precipitation_AWAP",
+                        "rh_tmin_SILO"
+                    ],
+                    "replace_zeros": true,
+                    "replace_zeros_with": 1,
+                    "treat_negatives": false,
+                    "kwargs": {}
+                },
+                "5_5_robust_0": {
+                    "transformer": {
+                        "robust": {
+                            "params": {
+                                "copy": true,
+                                "quantile_range": [
+                                    25.0,
+                                    75.0
+                                ],
+                                "with_centering": true,
+                                "with_scaling": true
+                            },
+                            "config": {
+                                "scale_": [
+                                    3.753936380147934,
+                                    10.67688512802124,
+                                    7.315669983625412,
+                                    4.013313055038452,
+                                    22.997483253479004
+                                ],
+                                "center_": [
+                                    2.9074912071228027,
+                                    13.796405792236328,
+                                    3.6528429985046387,
+                                    8.748659133911133,
+                                    51.671077728271484
+                                ]
+                            }
+                        }
+                    },
+                    "shape": [
+                        14818,
+                        7
+                    ],
+                    "method": "robust",
+                    "features": [
+                        "et_morton_point_SILO",
+                        "tmax_AWAP",
+                        "tmin_AWAP",
+                        "vprp_AWAP",
+                        "rh_tmax_SILO"
+                    ],
+                    "replace_zeros": false,
+                    "replace_zeros_with": 1,
+                    "treat_negatives": false,
+                    "kwargs": {}
+                },
+                "5_5_log_1": {
+                    "transformer": {
+                        "log": {
+                            "params": {},
+                            "config": {
+                                "data_dim_": 2
+                            }
+                        }
+                    },
+                    "shape": [
+                        14818,
+                        7
+                    ],
+                    "method": "log",
+                    "features": [
+                        "precipitation_AWAP",
+                        "rh_tmin_SILO"
+                    ],
+                    "replace_zeros": true,
+                    "replace_zeros_with": 1,
+                    "treat_negatives": false,
+                    "kwargs": {}
+                },
+                "5_6_robust_0": {
+                    "transformer": {
+                        "robust": {
+                            "params": {
+                                "copy": true,
+                                "quantile_range": [
+                                    25.0,
+                                    75.0
+                                ],
+                                "with_centering": true,
+                                "with_scaling": true
+                            },
+                            "config": {
+                                "scale_": [
+                                    3.7538633048534393,
+                                    10.675535202026367,
+                                    7.316601507365704,
+                                    4.013313055038452,
+                                    22.997483253479004
+                                ],
+                                "center_": [
+                                    2.907336711883545,
+                                    13.79522705078125,
+                                    3.651421070098877,
+                                    8.748659133911133,
+                                    51.671077728271484
+                                ]
+                            }
+                        }
+                    },
+                    "shape": [
+                        14818,
+                        7
+                    ],
+                    "method": "robust",
+                    "features": [
+                        "et_morton_point_SILO",
+                        "tmax_AWAP",
+                        "tmin_AWAP",
+                        "vprp_AWAP",
+                        "rh_tmax_SILO"
+                    ],
+                    "replace_zeros": false,
+                    "replace_zeros_with": 1,
+                    "treat_negatives": false,
+                    "kwargs": {}
+                },
+                "5_6_log_1": {
+                    "transformer": {
+                        "log": {
+                            "params": {},
+                            "config": {
+                                "data_dim_": 2
+                            }
+                        }
+                    },
+                    "shape": [
+                        14818,
+                        7
+                    ],
+                    "method": "log",
+                    "features": [
+                        "precipitation_AWAP",
+                        "rh_tmin_SILO"
+                    ],
+                    "replace_zeros": true,
+                    "replace_zeros_with": 1,
+                    "treat_negatives": false,
+                    "kwargs": {}
+                },
+                "5_7_robust_0": {
+                    "transformer": {
+                        "robust": {
+                            "params": {
+                                "copy": true,
+                                "quantile_range": [
+                                    25.0,
+                                    75.0
+                                ],
+                                "with_centering": true,
+                                "with_scaling": true
+                            },
+                            "config": {
+                                "scale_": [
+                                    3.753432720899582,
+                                    10.676408767700195,
+                                    7.316954925656319,
+                                    4.013313055038452,
+                                    22.997483253479004
+                                ],
+                                "center_": [
+                                    2.9066786766052246,
+                                    13.794517517089844,
+                                    3.650120258331299,
+                                    8.748659133911133,
+                                    51.671077728271484
+                                ]
+                            }
+                        }
+                    },
+                    "shape": [
+                        14818,
+                        7
+                    ],
+                    "method": "robust",
+                    "features": [
+                        "et_morton_point_SILO",
+                        "tmax_AWAP",
+                        "tmin_AWAP",
+                        "vprp_AWAP",
+                        "rh_tmax_SILO"
+                    ],
+                    "replace_zeros": false,
+                    "replace_zeros_with": 1,
+                    "treat_negatives": false,
+                    "kwargs": {}
+                },
+                "5_7_log_1": {
+                    "transformer": {
+                        "log": {
+                            "params": {},
+                            "config": {
+                                "data_dim_": 2
+                            }
+                        }
+                    },
+                    "shape": [
+                        14818,
+                        7
+                    ],
+                    "method": "log",
+                    "features": [
+                        "precipitation_AWAP",
+                        "rh_tmin_SILO"
+                    ],
+                    "replace_zeros": true,
+                    "replace_zeros_with": 1,
+                    "treat_negatives": false,
+                    "kwargs": {}
+                },
+                "5_8_robust_0": {
+                    "transformer": {
+                        "robust": {
+                            "params": {
+                                "copy": true,
+                                "quantile_range": [
+                                    25.0,
+                                    75.0
+                                ],
+                                "with_centering": true,
+                                "with_scaling": true
+                            },
+                            "config": {
+                                "scale_": [
+                                    3.75246199965477,
+                                    10.676408767700195,
+                                    7.317832812666893,
+                                    4.013313055038452,
+                                    22.997483253479004
+                                ],
+                                "center_": [
+                                    2.905996322631836,
+                                    13.793725967407227,
+                                    3.650120258331299,
+                                    8.748659133911133,
+                                    51.671077728271484
+                                ]
+                            }
+                        }
+                    },
+                    "shape": [
+                        14818,
+                        7
+                    ],
+                    "method": "robust",
+                    "features": [
+                        "et_morton_point_SILO",
+                        "tmax_AWAP",
+                        "tmin_AWAP",
+                        "vprp_AWAP",
+                        "rh_tmax_SILO"
+                    ],
+                    "replace_zeros": false,
+                    "replace_zeros_with": 1,
+                    "treat_negatives": false,
+                    "kwargs": {}
+                },
+                "5_8_log_1": {
+                    "transformer": {
+                        "log": {
+                            "params": {},
+                            "config": {
+                                "data_dim_": 2
+                            }
+                        }
+                    },
+                    "shape": [
+                        14818,
+                        7
+                    ],
+                    "method": "log",
+                    "features": [
+                        "precipitation_AWAP",
+                        "rh_tmin_SILO"
+                    ],
+                    "replace_zeros": true,
+                    "replace_zeros_with": 1,
+                    "treat_negatives": false,
+                    "kwargs": {}
+                },
+                "5_9_robust_0": {
+                    "transformer": {
+                        "robust": {
+                            "params": {
+                                "copy": true,
+                                "quantile_range": [
+                                    25.0,
+                                    75.0
+                                ],
+                                "with_centering": true,
+                                "with_scaling": true
+                            },
+                            "config": {
+                                "scale_": [
+                                    3.751970499753952,
+                                    10.675793170928955,
+                                    7.318782187998295,
+                                    4.013676166534424,
+                                    22.9964542388916
+                                ],
+                                "center_": [
+                                    2.905378818511963,
+                                    13.793210983276367,
+                                    3.650120258331299,
+                                    8.748659133911133,
+                                    51.671077728271484
+                                ]
+                            }
+                        }
+                    },
+                    "shape": [
+                        14818,
+                        7
+                    ],
+                    "method": "robust",
+                    "features": [
+                        "et_morton_point_SILO",
+                        "tmax_AWAP",
+                        "tmin_AWAP",
+                        "vprp_AWAP",
+                        "rh_tmax_SILO"
+                    ],
+                    "replace_zeros": false,
+                    "replace_zeros_with": 1,
+                    "treat_negatives": false,
+                    "kwargs": {}
+                },
+                "5_9_log_1": {
+                    "transformer": {
+                        "log": {
+                            "params": {},
+                            "config": {
+                                "data_dim_": 2
+                            }
+                        }
+                    },
+                    "shape": [
+                        14818,
+                        7
+                    ],
+                    "method": "log",
+                    "features": [
+                        "precipitation_AWAP",
+                        "rh_tmin_SILO"
+                    ],
+                    "replace_zeros": true,
+                    "replace_zeros_with": 1,
+                    "treat_negatives": false,
+                    "kwargs": {}
+                },
+                "5_10_robust_0": {
+                    "transformer": {
+                        "robust": {
+                            "params": {
+                                "copy": true,
+                                "quantile_range": [
+                                    25.0,
+                                    75.0
+                                ],
+                                "with_centering": true,
+                                "with_scaling": true
+                            },
+                            "config": {
+                                "scale_": [
+                                    3.7515275478363037,
+                                    10.676882028579712,
+                                    7.319821767508984,
+                                    4.013676166534424,
+                                    22.99481773376465
+                                ],
+                                "center_": [
+                                    2.904606819152832,
+                                    13.793069839477539,
+                                    3.648930072784424,
+                                    8.748659133911133,
+                                    51.67564392089844
+                                ]
+                            }
+                        }
+                    },
+                    "shape": [
+                        14818,
+                        7
+                    ],
+                    "method": "robust",
+                    "features": [
+                        "et_morton_point_SILO",
+                        "tmax_AWAP",
+                        "tmin_AWAP",
+                        "vprp_AWAP",
+                        "rh_tmax_SILO"
+                    ],
+                    "replace_zeros": false,
+                    "replace_zeros_with": 1,
+                    "treat_negatives": false,
+                    "kwargs": {}
+                },
+                "5_10_log_1": {
+                    "transformer": {
+                        "log": {
+                            "params": {},
+                            "config": {
+                                "data_dim_": 2
+                            }
+                        }
+                    },
+                    "shape": [
+                        14818,
+                        7
+                    ],
+                    "method": "log",
+                    "features": [
+                        "precipitation_AWAP",
+                        "rh_tmin_SILO"
+                    ],
+                    "replace_zeros": true,
+                    "replace_zeros_with": 1,
+                    "treat_negatives": false,
+                    "kwargs": {}
+                },
+                "5_11_robust_0": {
+                    "transformer": {
+                        "robust": {
+                            "params": {
+                                "copy": true,
+                                "quantile_range": [
+                                    25.0,
+                                    75.0
+                                ],
+                                "with_centering": true,
+                                "with_scaling": true
+                            },
+                            "config": {
+                                "scale_": [
+                                    3.75105220079422,
+                                    10.676633596420288,
+                                    7.319821767508984,
+                                    4.014144420623779,
+                                    22.99557876586914
+                                ],
+                                "center_": [
+                                    2.9043712615966797,
+                                    13.79256534576416,
+                                    3.6468100547790527,
+                                    8.748466491699219,
+                                    51.680511474609375
+                                ]
+                            }
+                        }
+                    },
+                    "shape": [
+                        14818,
+                        7
+                    ],
+                    "method": "robust",
+                    "features": [
+                        "et_morton_point_SILO",
+                        "tmax_AWAP",
+                        "tmin_AWAP",
+                        "vprp_AWAP",
+                        "rh_tmax_SILO"
+                    ],
+                    "replace_zeros": false,
+                    "replace_zeros_with": 1,
+                    "treat_negatives": false,
+                    "kwargs": {}
+                },
+                "5_11_log_1": {
+                    "transformer": {
+                        "log": {
+                            "params": {},
+                            "config": {
+                                "data_dim_": 2
+                            }
+                        }
+                    },
+                    "shape": [
+                        14818,
+                        7
+                    ],
+                    "method": "log",
+                    "features": [
+                        "precipitation_AWAP",
+                        "rh_tmin_SILO"
+                    ],
+                    "replace_zeros": true,
+                    "replace_zeros_with": 1,
+                    "treat_negatives": false,
+                    "kwargs": {}
+                },
+                "5_12_robust_0": {
+                    "transformer": {
+                        "robust": {
+                            "params": {
+                                "copy": true,
+                                "quantile_range": [
+                                    25.0,
+                                    75.0
+                                ],
+                                "with_centering": true,
+                                "with_scaling": true
+                            },
+                            "config": {
+                                "scale_": [
+                                    3.75085312128067,
+                                    10.678108930587769,
+                                    7.320973850786686,
+                                    4.014535665512085,
+                                    22.995161056518555
+                                ],
+                                "center_": [
+                                    2.904184341430664,
+                                    13.790332794189453,
+                                    3.6457700729370117,
+                                    8.748381614685059,
+                                    51.68418884277344
+                                ]
+                            }
+                        }
+                    },
+                    "shape": [
+                        14818,
+                        7
+                    ],
+                    "method": "robust",
+                    "features": [
+                        "et_morton_point_SILO",
+                        "tmax_AWAP",
+                        "tmin_AWAP",
+                        "vprp_AWAP",
+                        "rh_tmax_SILO"
+                    ],
+                    "replace_zeros": false,
+                    "replace_zeros_with": 1,
+                    "treat_negatives": false,
+                    "kwargs": {}
+                },
+                "5_12_log_1": {
+                    "transformer": {
+                        "log": {
+                            "params": {},
+                            "config": {
+                                "data_dim_": 2
+                            }
+                        }
+                    },
+                    "shape": [
+                        14818,
+                        7
+                    ],
+                    "method": "log",
+                    "features": [
+                        "precipitation_AWAP",
+                        "rh_tmin_SILO"
+                    ],
+                    "replace_zeros": true,
+                    "replace_zeros_with": 1,
+                    "treat_negatives": false,
+                    "kwargs": {}
+                },
+                "5_13_robust_0": {
+                    "transformer": {
+                        "robust": {
+                            "params": {
+                                "copy": true,
+                                "quantile_range": [
+                                    25.0,
+                                    75.0
+                                ],
+                                "with_centering": true,
+                                "with_scaling": true
+                            },
+                            "config": {
+                                "scale_": [
+                                    3.7506988644599915,
+                                    10.678979873657227,
+                                    7.320288747549057,
+                                    4.014535665512085,
+                                    22.99318218231201
+                                ],
+                                "center_": [
+                                    2.903916120529175,
+                                    13.788310050964355,
+                                    3.6448285579681396,
+                                    8.748381614685059,
+                                    51.68626403808594
+                                ]
+                            }
+                        }
+                    },
+                    "shape": [
+                        14818,
+                        7
+                    ],
+                    "method": "robust",
+                    "features": [
+                        "et_morton_point_SILO",
+                        "tmax_AWAP",
+                        "tmin_AWAP",
+                        "vprp_AWAP",
+                        "rh_tmax_SILO"
+                    ],
+                    "replace_zeros": false,
+                    "replace_zeros_with": 1,
+                    "treat_negatives": false,
+                    "kwargs": {}
+                },
+                "5_13_log_1": {
+                    "transformer": {
+                        "log": {
+                            "params": {},
+                            "config": {
+                                "data_dim_": 2
+                            }
+                        }
+                    },
+                    "shape": [
+                        14818,
+                        7
+                    ],
+                    "method": "log",
+                    "features": [
+                        "precipitation_AWAP",
+                        "rh_tmin_SILO"
+                    ],
+                    "replace_zeros": true,
+                    "replace_zeros_with": 1,
+                    "treat_negatives": false,
+                    "kwargs": {}
+                },
+                "5_14_robust_0": {
+                    "transformer": {
+                        "robust": {
+                            "params": {
+                                "copy": true,
+                                "quantile_range": [
+                                    25.0,
+                                    75.0
+                                ],
+                                "with_centering": true,
+                                "with_scaling": true
+                            },
+                            "config": {
+                                "scale_": [
+                                    3.7502763867378235,
+                                    10.678713321685791,
+                                    7.319880269467831,
+                                    4.014243721961975,
+                                    22.997243881225586
+                                ],
+                                "center_": [
+                                    2.9036805629730225,
+                                    13.78748893737793,
+                                    3.6438608169555664,
+                                    8.748271942138672,
+                                    51.68877410888672
+                                ]
+                            }
+                        }
+                    },
+                    "shape": [
+                        14818,
+                        7
+                    ],
+                    "method": "robust",
+                    "features": [
+                        "et_morton_point_SILO",
+                        "tmax_AWAP",
+                        "tmin_AWAP",
+                        "vprp_AWAP",
+                        "rh_tmax_SILO"
+                    ],
+                    "replace_zeros": false,
+                    "replace_zeros_with": 1,
+                    "treat_negatives": false,
+                    "kwargs": {}
+                },
+                "5_14_log_1": {
+                    "transformer": {
+                        "log": {
+                            "params": {},
+                            "config": {
+                                "data_dim_": 2
+                            }
+                        }
+                    },
+                    "shape": [
+                        14818,
+                        7
+                    ],
+                    "method": "log",
+                    "features": [
+                        "precipitation_AWAP",
+                        "rh_tmin_SILO"
+                    ],
+                    "replace_zeros": true,
+                    "replace_zeros_with": 1,
+                    "treat_negatives": false,
+                    "kwargs": {}
+                }
+            },
+            "feature_names": [
+                "et_morton_point_SILO",
+                "precipitation_AWAP",
+                "tmax_AWAP",
+                "tmin_AWAP",
+                "vprp_AWAP",
+                "rh_tmax_SILO",
+                "rh_tmin_SILO"
+            ],
+            "config": [
+                {
+                    "method": "robust",
+                    "features": [
+                        "et_morton_point_SILO",
+                        "tmax_AWAP",
+                        "tmin_AWAP",
+                        "vprp_AWAP",
+                        "rh_tmax_SILO"
+                    ]
+                },
+                {
+                    "method": "log",
+                    "replace_zeros": true,
+                    "features": [
+                        "precipitation_AWAP",
+                        "rh_tmin_SILO"
+                    ]
+                }
+            ],
+            "is_numpy_": true,
+            "is_dict_": false,
+            "is_list_": false
+        },
+        "y_transformer_": {
+            "transformers_": {
+                "5": {
+                    "transformer": {
+                        "robust": {
+                            "params": {
+                                "copy": true,
+                                "quantile_range": [
+                                    25.0,
+                                    75.0
+                                ],
+                                "with_centering": true,
+                                "with_scaling": true
+                            },
+                            "config": {
+                                "scale_": [
+                                    1164.9030151367188
+                                ],
+                                "center_": [
+                                    719.3720092773438
+                                ]
+                            }
+                        }
+                    },
+                    "shape": [
+                        14818,
+                        1
+                    ],
+                    "method": "robust",
+                    "features": [
+                        "streamflow_MLd"
+                    ],
+                    "replace_zeros": false,
+                    "replace_zeros_with": 1,
+                    "treat_negatives": false,
+                    "kwargs": {}
+                }
+            },
+            "feature_names": [
+                "streamflow_MLd"
+            ],
+            "config": {
+                "method": "robust",
+                "features": [
+                    "streamflow_MLd"
+                ]
+            },
+            "is_numpy_": true,
+            "is_dict_": false,
+            "is_list_": false
+        },
+        "model": {
+            "layers": {
+                "Input": {
+                    "config": {
+                        "shape": [
+                            15,
+                            7
+                        ],
+                        "name": "Input"
+                    }
+                },
+                "TemporalFusionTransformer": {
+                    "config": {
+                        "total_time_steps": 15,
+                        "num_encoder_steps": 15,
+                        "num_inputs": 7,
+                        "category_counts": [],
+                        "input_obs_loc": [],
+                        "static_input_loc": [],
+                        "known_regular_inputs": [
+                            0,
+                            1,
+                            2,
+                            3,
+                            4,
+                            5,
+                            6
+                        ],
+                        "known_categorical_inputs": [],
+                        "hidden_units": 80,
+                        "dropout_rate": 0.1,
+                        "num_heads": 6,
+                        "use_cudnn": false,
+                        "future_inputs": false,
+                        "return_sequences": true,
+                        "name": "TemporalFusionTransformer",
+                        "return_attention_components": true
+                    }
+                },
+                "lambda": {
+                    "config": {
+                        "class_name": "Lambda",
+                        "config": {
+                            "name": "lambda",
+                            "trainable": true,
+                            "dtype": null,
+                            "function": [
+                                "4wEAAAAAAAAAAQAAAAUAAABTAAAAcxIAAAB8AHQAZAFkAGQAhQJmAxkAUwApAk7p/////ykB2ghF\nbGxpcHNpcykB2gJfeKkAcgQAAAD6PUQ6L215dG9vbHMvQUk0V2F0ZXIvYWk0d2F0ZXIvbW9kZWxz\nL190ZW5zb3JmbG93L19mdW5jdGlvbnMucHnaCDxsYW1iZGE+yQEAAPMAAAAA\n",
+                                null,
+                                null
+                            ],
+                            "function_type": "lambda",
+                            "module": "ai4water.models._tensorflow._functions",
+                            "output_shape": null,
+                            "output_shape_type": "raw",
+                            "output_shape_module": null,
+                            "arguments": {}
+                        },
+                        "name": "lambda"
+                    }
+                },
+                "Dense_out": {
+                    "units": 1,
+                    "activation": null,
+                    "name": "Dense_out"
+                }
+            }
+        },
+        "x_transformation": [
+            {
+                "method": "robust",
+                "features": [
+                    "et_morton_point_SILO",
+                    "tmax_AWAP",
+                    "tmin_AWAP",
+                    "vprp_AWAP",
+                    "rh_tmax_SILO"
+                ]
+            },
+            {
+                "method": "log",
+                "replace_zeros": true,
+                "features": [
+                    "precipitation_AWAP",
+                    "rh_tmin_SILO"
+                ]
+            }
+        ],
+        "y_transformation": {
+            "method": "robust",
+            "features": [
+                "streamflow_MLd"
+            ]
+        },
+        "composite": false,
+        "lr": 1.8928566321671455e-05,
+        "optimizer": "Adam",
+        "loss": "mse",
+        "quantiles": null,
+        "epochs": 700,
+        "min_val_loss": 0.0001,
+        "patience": 100,
+        "shuffle": true,
+        "save_model": true,
+        "backend": "tensorflow",
+        "buffer_size": 100,
+        "batches_per_epoch": null,
+        "steps_per_epoch": null,
+        "monitor": null,
+        "batches": "3d",
+        "prefix": null,
+        "kmodel": null,
+        "cross_validator": null,
+        "wandb_config": null,
+        "val_metric": "r2_score",
+        "model_name_": null,
+        "is_custom_model_": false
+    },
+    "method": null,
+    "loss": "mean_squared_error",
+    "classes_": [],
+    "num_classes_": 0,
+    "is_binary_": false,
+    "is_multiclass_": false,
+    "is_multilabel_": false
+}
