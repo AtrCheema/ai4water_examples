@@ -1,7 +1,7 @@
 pandas
 numpy
 matplotlib
-sphinx
+sphinx<1
 sphinx-prompt
 sphinx_rtd_theme
 sphinx_issues
@@ -14,7 +14,7 @@ sphinxcontrib-svg2pdfconverter
 ipykernel
 jinja2
 
-scipy<7
+scipy
 scikit-learn
 tensorflow==2.7
 protobuf==3.19.1
