@@ -14,7 +14,7 @@ sphinxcontrib-svg2pdfconverter
 ipykernel
 jinja2
 
-scipy
+scipy<7
 scikit-learn
 tensorflow==2.7
 protobuf==3.19.1
