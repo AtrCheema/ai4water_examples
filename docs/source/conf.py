@@ -148,7 +148,19 @@ sphinx_gallery_conf1 = {
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'sphinx_rtd_theme'
+html_theme = "sphinx_rtd_theme"
+
+html_theme_options = {
+    # toc options
+    "collapse_navigation": True,
+    "navigation_depth": 3,
+    "show_prev_next": True,
+    'display_version': True,
+    'prev_next_buttons_location': 'bottom',
+
+    #"navbar_end": ["version-switcher", "navbar-icon-links"],
+}
+
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
