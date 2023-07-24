@@ -1,7 +1,7 @@
 pandas
 numpy
 matplotlib
-sphinx<1
+sphinx<7
 sphinx-prompt
 sphinx_rtd_theme
 sphinx_issues
