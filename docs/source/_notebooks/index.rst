@@ -80,3 +80,9 @@ Datasets
    Mtropics dataset from Laos <datasets/mtropics_laos.ipynb>
    Global River Water Quality data <datasets/grqa.ipynb>
    Quadica <datasets/quadica.ipynb>
+   CAMELS US <datasets/CAMELS_US.ipynb>
+   CAMELS Great Britain <datasets/CAMELS_GB.ipynb>
+   CAMELS Australia <datasets/CAMELS_AUS.ipynb>
+   CAMELS Brazil <datasets/CAMELS_Br.ipynb>
+   CAMELS Chile <datasets/CAMELS_CL.ipynb>
+   CAMELS Denmark <datasets/CAMELS_DK.ipynb>
