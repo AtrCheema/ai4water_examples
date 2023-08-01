@@ -86,3 +86,7 @@ Datasets
    CAMELS Brazil <datasets/CAMELS_Br.ipynb>
    CAMELS Chile <datasets/CAMELS_CL.ipynb>
    CAMELS Denmark <datasets/CAMELS_DK.ipynb>
+   CABra <datasets/CABra.ipynb>
+   CCAM <datasets/CCAM.ipynb>
+   HYSETS <datasets/HYSETS.ipynb>
+   HYPE <datasets/HYPE.ipynb>
